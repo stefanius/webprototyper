@@ -1,4 +1,4 @@
 stefanius_webprototyper:
-    resource: "@StefaniusWebprototyperBundle/Resources/config/routing.yml"
+    resource: "@StefaniusWebprototyperBundle/Controller/"
+    type:     annotation
     prefix:   /
-

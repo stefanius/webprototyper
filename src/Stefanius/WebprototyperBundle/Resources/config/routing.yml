@@ -1,3 +1,0 @@
-stefanius_webprototyper_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: StefaniusWebprototyperBundle:Default:index }
