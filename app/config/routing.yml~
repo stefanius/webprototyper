@@ -1,0 +1,3 @@
+stefanius_webprototyper:
+    resource: "@StefaniusWebprototyperBundle/Controller/"
+    type:     annotation
