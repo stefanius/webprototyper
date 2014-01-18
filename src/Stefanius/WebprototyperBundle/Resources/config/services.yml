@@ -1,0 +1,7 @@
+parameters:
+#    stefanius_webprototyper.example.class: Stefanius\WebprototyperBundle\Example
+
+services:
+#    stefanius_webprototyper.example:
+#        class: %stefanius_webprototyper.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
