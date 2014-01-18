@@ -1,0 +1,26 @@
+{
+    "name": "fieg/symfony-bootstrap",
+    "authors": [
+        {
+            "name": "fieg",
+            "email": "jeroen@fieg.nl"
+        }
+    ],
+    "require": {
+      "symfony/framework-standard-edition": "*",
+      "composer/composer": "*@dev"
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "Fieg\\SymfonyBootstrap\\ScriptHandler::copyFramework",
+        "Fieg\\SymfonyBootstrap\\ScriptHandler::applyPatches",
+        "Fieg\\SymfonyBootstrap\\ScriptHandler::patchComposerJson",
+        "Fieg\\SymfonyBootstrap\\ScriptHandler::runComposerUpdate",
+        "Fieg\\SymfonyBootstrap\\ScriptHandler::cleanup"
+      ]
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+      "psr-0": { "": "src/" }
+    }
+}
