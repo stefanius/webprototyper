@@ -23,9 +23,9 @@ mysql::db { 'symfony':
 
 class { 'apache': }
 
-apache::vhost { 'your.domain.com':
+apache::vhost { 'webprototyper.dev':
   docroot  => '/vagrant/web',
-  serveraliases => ["your.domain.dev"],
+  serveraliases => ["webprototyper.dev"],
 }
 
 apache::module { 'php5': }
