@@ -22,9 +22,6 @@ class DefaultController extends Controller
 	 */
     public function testAction($name)
     {
-        return $this->render('StefaniusWebprototyperBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('StefaniusWebprototyperBundle:ProtoTemplates:basic.html.twig', array('name' => $name));
     }
-
-
-
 }

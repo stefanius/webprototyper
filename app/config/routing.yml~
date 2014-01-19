@@ -1,3 +1,21 @@
+# app/config/routing.yml
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
 stefanius_webprototyper:
     resource: "@StefaniusWebprototyperBundle/Controller/"
     type:     annotation
+    prefix:   /
+
+stefanius_webprototyper_catchall:
+    pattern: /{slug}
+    defaults: { _controller: StefaniusWebprototyperBundle:Default:default }
+    requirements:
+        _method: GET
+        slug: ".+"

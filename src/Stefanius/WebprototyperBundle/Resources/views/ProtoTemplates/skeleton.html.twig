@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+			{% javascripts '../vendor/twitter/bootstrap/dist/js/*min*' %}
+			    <script type="text/javascript" src="{{ asset_url }}"></script>
+			{% endjavascripts %}
+			
+			{% stylesheets '../vendor/twitter/bootstrap/dist/css/*min*' %}
+			    <link href="{{ asset_url }}" rel="stylesheet" />
+			{% endstylesheets %}
+		
+			{% stylesheets '../vendor/twitter/bootstrap/examples/starter-template/*.css' %}
+			    <link href="{{ asset_url }}" rel="stylesheet" />
+			{% endstylesheets %}
+			
+			<title>Starter Template for Bootstrap</title>
+        {% endblock %}
+    </head>
+
+   {% block content %}{% endblock %}
+</html>

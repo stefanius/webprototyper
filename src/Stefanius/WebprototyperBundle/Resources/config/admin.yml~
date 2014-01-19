@@ -1,0 +1,11 @@
+services:
+    sonata.admin.page:
+        class: Stefanius\WebprototyperBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Page" }
+        arguments:
+            - ~
+            - Acme\DemoBundle\Entity\Post
+            - ~
+        calls:
+            - [ setTranslationDomain, [AcmeDemoBundle]]
