@@ -13,6 +13,8 @@ class CatchallController extends Controller
     {
     	$em = $this->get('doctrine')->getManager();
     	$page = $em->getRepository('StefaniusWebprototyperBundle:Page')->findOneByUrl($slug);
-    	return $this->render('StefaniusWebprototyperBundle:ProtoTemplates:basic.html.twig', array('page' => $page));
+    	$csslibs = $page->getCssLibs();
+    	$javascriptlibs = $page->getJavascriptLibs();
+    	return $this->render('StefaniusWebprototyperBundle:ProtoTemplates:basic.html.twig', array('page' => $page, 'csslibs'=>$csslibs, 'javascriptlibs'=>$javascriptlibs));
     }
 }

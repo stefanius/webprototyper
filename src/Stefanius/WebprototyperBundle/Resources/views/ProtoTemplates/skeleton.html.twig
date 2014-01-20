@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {% block head %}
-			{% javascripts '../vendor/twitter/bootstrap/dist/js/*min*' %}
-			    <script type="text/javascript" src="{{ asset_url }}"></script>
-			{% endjavascripts %}
-			
-			{% stylesheets '../vendor/twitter/bootstrap/dist/css/*min*' %}
-			    <link href="{{ asset_url }}" rel="stylesheet" />
-			{% endstylesheets %}
-		
-			{% stylesheets '../vendor/twitter/bootstrap/examples/starter-template/*.css' %}
-			    <link href="{{ asset_url }}" rel="stylesheet" />
-			{% endstylesheets %}
+    <head>			
+			{% for csslib in csslibs %}
+		            <link href="{{ csslib.location }}" rel="stylesheet" />
+			{% endfor %}
+
+			{% for javascriptlib in javascriptlibs %}
+		            <script type="text/javascript" src="{{javascriptlib.location}}"></script>
+			{% endfor %}
 			
 			<title>Starter Template for Bootstrap</title>
-        {% endblock %}
     </head>
 
    {% block content %}{% endblock %}

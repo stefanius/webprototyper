@@ -24,9 +24,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    form:
-        resources:
-            - 'SonataFormatterBundle:Form:formatter.html.twig'
 # Assetic Configuration
 assetic:
     debug:          "%kernel.debug%"
@@ -69,6 +66,3 @@ sonata_block:
 sonata_admin:
     title:      Acme Demo Bundle
     title_logo: bundles/acmedemo/img/fancy_acme_logo.png
-    templates:
-        # default global templates
-        layout:  SonataAdminBundle::layout.html.twig

@@ -91,4 +91,12 @@ class CssLib
     {
         return $this->location;
     }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function __toString(){
+    	return $this->getName();
+    }
 }

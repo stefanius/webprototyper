@@ -5,7 +5,27 @@ services:
             - { name: sonata.admin, manager_type: orm, group: "Content", label: "Page" }
         arguments:
             - ~
-            - Acme\DemoBundle\Entity\Post
+            - Stefanius\WebprototyperBundle\Entity\Page
             - ~
         calls:
-            - [ setTranslationDomain, [AcmeDemoBundle]]
+            - [ setTranslationDomain, [StefaniusWebprototyperBundle]]
+    sonata.admin.csslib:
+        class: Stefanius\WebprototyperBundle\Admin\CssLibAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "CSS Libraries" }
+        arguments:
+            - ~
+            - Stefanius\WebprototyperBundle\Entity\CssLib
+            - ~
+        calls:
+            - [ setTranslationDomain, [StefaniusWebprototyperBundle]]
+    sonata.admin.javascriptlib:
+        class: Stefanius\WebprototyperBundle\Admin\JavascriptLibAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Javascript Libraries" }
+        arguments:
+            - ~
+            - Stefanius\WebprototyperBundle\Entity\CssLib
+            - ~
+        calls:
+            - [ setTranslationDomain, [StefaniusWebprototyperBundle]]

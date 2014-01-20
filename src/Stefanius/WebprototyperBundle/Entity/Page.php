@@ -51,12 +51,40 @@ class Page
 
     /**
      * @var array
-     *
-     * @ORM\Column(name="javascripts", type="array")
+     * @ORM\ManyToMany(targetEntity="Javascript")
+     * @ORM\JoinTable(name="pages_javascripts",
+     *      joinColumns={@ORM\JoinColumn(name="page_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="javascript_id", referencedColumnName="id")}
+     * )
      */
     private $javascripts;
 
-
+    /**
+     * @var array
+     * @ORM\ManyToMany(targetEntity="CssLib")
+     * @ORM\JoinTable(name="pages_csslibs",
+     *      joinColumns={@ORM\JoinColumn(name="page_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="csslib_id", referencedColumnName="id")}
+     * )
+     */
+    private $cssLibs;
+        
+    /**
+     * @var array
+     * @ORM\ManyToMany(targetEntity="JavascriptLib")
+     * @ORM\JoinTable(name="pages_javascriptlibs",
+     *      joinColumns={@ORM\JoinColumn(name="page_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="javascriptlib_id", referencedColumnName="id")}
+     * )
+     */
+    private $javascriptLibs;
+    
+    public function __construct(){
+    	$this->javascripts = new \Doctrine\Common\Collections\ArrayCollection();
+    	$this->cssLibs = new \Doctrine\Common\Collections\ArrayCollection();
+    	$this->javascriptLibs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -181,4 +209,33 @@ class Page
     {
         return $this->javascripts;
     }
+
+    /**
+     * 
+     * @param unknown_type $cssLibs
+     * @return \Stefanius\WebprototyperBundle\Entity\Page
+     */
+    public function setCssLibs($cssLibs)
+    {
+    	$this->cssLibs = $cssLibs;
+    
+    	return $this;
+    }
+    
+    /**
+     * 
+     */
+    public function getCssLibs()
+    {
+    	return $this->cssLibs;
+    }   
+    
+    /**
+     *
+     */
+    public function getJavascriptLibs()
+    {
+    	return $this->javascriptLibs;
+    }
+    
 }
