@@ -17,7 +17,7 @@ class PageAdmin extends Admin
 				->add('description', 'textarea', array('label' => 'description'))
 				->add('url', 'text', array('label' => 'url'))
 				->add('csslibs', 'entity', array('class'=>'StefaniusWebprototyperBundle:CssLib','by_reference' => false, 'multiple' => true))
-
+				->add('javascriptlibs', 'entity', array('class'=>'StefaniusWebprototyperBundle:JavascriptLib','by_reference' => false, 'multiple' => true))
 		;
 
 	}

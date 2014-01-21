@@ -34,7 +34,13 @@ class JavascriptLib
      * @ORM\Column(name="location", type="string", length=255)
      */
     private $location;
-
+   
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ordering", type="integer")
+     */
+    private $order;    
 
     /**
      * Get id
@@ -90,5 +96,29 @@ class JavascriptLib
     public function getLocation()
     {
         return $this->location;
+    }
+    
+    /**
+     * 
+     * @param $order
+     */
+    public function setOrder($order){
+    	$this->order = $order;
+    	
+    	return $this;
+    }
+    
+    /**
+     * @return integer
+     */
+    public function getOrder(){
+    	return $this->order;
+    }
+    /**
+     *
+     * @return string
+     */
+    public function __toString(){
+    	return $this->getName();
     }
 }

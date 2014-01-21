@@ -10,18 +10,21 @@ class DefaultController extends Controller
 {
 	
 	/**
-	 * @Route("/lullo")
+	 * @Route("/")
 	 */
 	public function indexAction()
 	{
-		return $this->render('StefaniusWebprototyperBundle:Default:index.html.twig', array('name' => 'banaan'));
+		$em = $this->get('doctrine')->getManager();
+		$page = $em->getRepository('StefaniusWebprototyperBundle:Page')->findOneByUrl('/');
+
+		if(null === $page){
+			return $this->render('StefaniusWebprototyperBundle:Default:index.html.twig', array('name' => 'banaan'));
+		}else{
+			$csslibs = $page->getCssLibs();
+			$javascriptlibs = $page->getJavascriptLibs();
+			 
+			return $this->render('StefaniusWebprototyperBundle:ProtoTemplates:basic.html.twig', array('page' => $page, 'csslibs'=>$csslibs, 'javascriptlibs'=>$javascriptlibs));				
+		}
+		
 	}
-	
-	/**
-	 * @Route("/search/{name}")
-	 */
-    public function testAction($name)
-    {
-        return $this->render('StefaniusWebprototyperBundle:ProtoTemplates:basic.html.twig', array('name' => $name));
-    }
 }

@@ -14,6 +14,7 @@ class JavascriptLibAdmin extends Admin
         $formMapper
             ->add('name', 'text', array('label' => 'Name'))
             ->add('location', 'text', array('label' => 'Location'))
+            ->add('order',null, array('label' => 'Order'))
         ;
     }
 
@@ -23,6 +24,7 @@ class JavascriptLibAdmin extends Admin
         $datagridMapper
             ->add('name')
             ->add('location')
+            ->add('order')
         ;
     }
 
@@ -32,6 +34,7 @@ class JavascriptLibAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('location')
+            ->add('order')
         ;
     }
 }

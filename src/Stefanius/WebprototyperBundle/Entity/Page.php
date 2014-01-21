@@ -76,6 +76,7 @@ class Page
      *      joinColumns={@ORM\JoinColumn(name="page_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="javascriptlib_id", referencedColumnName="id")}
      * )
+     * @ORM\OrderBy({"order"="ASC"})
      */
     private $javascriptLibs;
     
@@ -229,7 +230,19 @@ class Page
     {
     	return $this->cssLibs;
     }   
+
+    /**
+     *
+     * @param unknown_type $cssLibs
+     * @return \Stefanius\WebprototyperBundle\Entity\Page
+     */
+    public function setJavascriptLibs($javascriptLibs)
+    {
+    	$this->javascriptLibs = $javascriptLibs;
     
+    	return $this;
+    }
+      
     /**
      *
      */
